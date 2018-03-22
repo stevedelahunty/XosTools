@@ -14,7 +14,7 @@ itself or skipping down to the next section.
 ## Section header format
 
  Section headers are defined as follows:
- 
+``` 
   typedef struct extr_img_format {
         uint16_t magic;           byte 0-1   (0xEF00)
         uint16_t len_hdr;         byte 2-3   (Length of header, always 0x50)
@@ -32,7 +32,7 @@ itself or skipping down to the next section.
         uint32_t len_sig;         byte 48-4b
         uint32_t pad;             byte 4c-4f
    } __attribute__ ((packed)) extr_img_format_t;
- 
+ ```
  
 
 ## Spec file format
@@ -40,7 +40,7 @@ itself or skipping down to the next section.
   tarball contains "envelope" information which we are most interested with.
   In particular, the outer tarball contains a file called 'spec' which looks
   like this:
-  
+```
   installer=libupgrade.so:
   description="This is the Extreme Optics loadable module image package":
   pkgtype=optics:
@@ -65,12 +65,14 @@ itself or skipping down to the next section.
   platform=onie:
   pkgname=onie-22.5.0.17-optics.xmod:
   require=22.5.0.17:
+```
 
 ## Compiling and running this sample
 Everything is done from the Makefile. To compile, simply type 'make'. To run the
 sample, type 'make run'. To clean up, type 'make clean'.
 
 ## Sample output or running this application
+```
 -bash-4.2$ make
 javac xmod_snoop.java xmod_header.java
 -bash-4.2$ make run
@@ -123,3 +125,4 @@ branch=priv_optics_lm:
 platform=onie:
 pkgname=onie-22.5.0.17-optics.xmod:
 require=22.5.0.17:
+```
